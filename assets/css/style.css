@@ -6950,59 +6950,69 @@ h3.hero-main-title-1 {
 }
 /* Aici se termina codul de mobil. Tot ce e sub linia asta e pentru Desktop. */
 
+/* ============================================================
+   VARIANTA FINALA: MENIU TIP "PASTILE" PENTRU MOBIL
+   ============================================================ */
+
 @media screen and (max-width: 1199px) {
-    /* 1. Ascundem elementele inutile */
+    /* 1. Curatam elementele care nu ne trebuie */
     .ak-munu_toggle, 
     .ak-hamburger_wrap, 
     .ak-munu_dropdown_toggle {
         display: none !important;
     }
 
-    /* 2. Header cu fundal semi-transparent pentru contrast */
+    /* 2. Header-ul ramane fix si clar */
     .ak-site_header.ak-style1 .ak-main_header_in {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
-        justify-content: center !important;
+        background: rgba(0, 0, 0, 0.8) !important; /* Fundal inchis la culoare pentru tot header-ul */
+        padding: 15px 10px !important;
         height: auto !important;
-        padding: 15px 0 !important;
-        /* Adăugăm un fundal negru transparent sub tot headerul */
-        background: rgba(0, 0, 0, 0.6) !important; 
-        backdrop-filter: blur(5px); /* Efect de sticlă mată (opțional) */
     }
 
-    .ak-site_header.ak-style1 .ak-main_header_center .ak-site_branding {
-        position: relative !important;
-        transform: none !important;
-        left: 0 !important;
-        margin-bottom: 10px !important;
-        display: block !important;
+    /* 3. Ajustare Logo sa nu fie prea urias */
+    .ak-site_branding img {
+        max-height: 45px !important;
+        margin-bottom: 15px !important;
     }
 
-    /* 3. Meniu centrat cu text lizibil */
+    /* 4. Transformam lista in "butoane" centrate */
     .ak-nav .ak-nav_list {
         display: block !important;
-        position: relative !important;
         width: 100% !important;
         text-align: center !important;
-        background: transparent !important;
+        padding: 0 !important;
+        margin: 0 !important;
         visibility: visible !important;
         opacity: 1 !important;
     }
 
     .ak-nav .ak-nav_list li {
         display: inline-block !important;
-        margin: 5px 10px !important;
+        margin: 4px 5px !important; /* Distanta intre butoane */
     }
 
     .ak-nav .ak-nav_list li a {
-        font-size: 14px !important;
-        font-weight: 600 !important; /* Text mai gros (bold) */
+        display: inline-block !important;
+        background: rgba(255, 255, 255, 0.1) !important; /* Un gri foarte deschis semi-transparent */
+        border: 1px solid rgba(255, 255, 255, 0.3) !important; /* O dunga fina in jurul butonului */
+        padding: 6px 12px !important;
+        border-radius: 20px !important; /* Colturile rotunjite fac butoanele sa arate modern */
         color: #ffffff !important;
+        font-size: 13px !important;
+        font-weight: 500 !important;
         text-transform: uppercase !important;
-        letter-spacing: 1px !important;
-        /* UMBRĂ TEXT pentru lizibilitate maximă */
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9) !important;
-        padding: 5px 0 !important;
+        letter-spacing: 0.5px !important;
+        text-shadow: none !important; /* Scoatem umbra veche, butonul e acum clar */
+        transition: all 0.3s ease !important;
+    }
+
+    /* Efect cand se apasa pe buton */
+    .ak-nav .ak-nav_list li a:active,
+    .ak-nav .ak-nav_list li a:focus {
+        background: var(--heading-color) !important; /* Se face albastru (culoarea ta de brand) cand e apasat */
+        border-color: var(--heading-color) !important;
     }
 }
