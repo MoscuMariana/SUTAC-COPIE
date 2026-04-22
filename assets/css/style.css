@@ -6969,7 +6969,7 @@ h3.hero-main-title-1 {
         align-items: center !important;
         height: auto !important;
         background: transparent !important; /* Fără bandă neagră */
-        padding: 10px 0 !important;
+        padding: -10px 0 !important;
     }
 
     .ak-site_header.ak-style1 .ak-main_header_center .ak-site_branding {
