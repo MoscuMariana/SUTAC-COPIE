@@ -6950,75 +6950,59 @@ h3.hero-main-title-1 {
 }
 /* Aici se termina codul de mobil. Tot ce e sub linia asta e pentru Desktop. */
 
-/* ============================================================
-   FORCE DESKTOP STYLE (CENTERED) & REMOVE PLUS SIGNS ON MOBILE
-   ============================================================ */
-
 @media screen and (max-width: 1199px) {
-    /* 1. Ascunde hamburgerul și "plusurile" (dropdown toggles) */
+    /* 1. Ascundem elementele inutile */
     .ak-munu_toggle, 
     .ak-hamburger_wrap, 
     .ak-munu_dropdown_toggle {
         display: none !important;
     }
 
-    /* 2. Centrează Header-ul și Logo-ul */
+    /* 2. Header cu fundal semi-transparent pentru contrast */
     .ak-site_header.ak-style1 .ak-main_header_in {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
         justify-content: center !important;
         height: auto !important;
-        text-align: center !important;
         padding: 15px 0 !important;
+        /* Adăugăm un fundal negru transparent sub tot headerul */
+        background: rgba(0, 0, 0, 0.6) !important; 
+        backdrop-filter: blur(5px); /* Efect de sticlă mată (opțional) */
     }
 
     .ak-site_header.ak-style1 .ak-main_header_center .ak-site_branding {
         position: relative !important;
         transform: none !important;
         left: 0 !important;
-        margin-bottom: 15px !important;
+        margin-bottom: 10px !important;
         display: block !important;
     }
 
-    /* 3. Forțează lista de meniu să fie vizibilă și centrată */
+    /* 3. Meniu centrat cu text lizibil */
     .ak-nav .ak-nav_list {
-        display: block !important;         /* Permite așezarea pe rânduri dacă e nevoie */
+        display: block !important;
         position: relative !important;
         width: 100% !important;
-        left: 0 !important;
-        background-color: transparent !important;
-        padding: 0 !important;
-        opacity: 1 !important;
+        text-align: center !important;
+        background: transparent !important;
         visibility: visible !important;
-        max-height: none !important;
-        text-align: center !important;      /* Centrează elementele interne li */
+        opacity: 1 !important;
     }
 
-    /* 4. Stil pentru butoanele de meniu individuale */
     .ak-nav .ak-nav_list li {
-        display: inline-block !important;   /* Stau unul lângă altul, ca pe desktop */
-        margin: 5px 8px !important;         /* Spațiu între cuvinte */
-        padding: 0 !important;
+        display: inline-block !important;
+        margin: 5px 10px !important;
     }
 
     .ak-nav .ak-nav_list li a {
-        font-size: 13px !important;         /* Dimensiune lizibilă pe mobil */
-        color: #fff !important;
+        font-size: 14px !important;
+        font-weight: 600 !important; /* Text mai gros (bold) */
+        color: #ffffff !important;
         text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+        /* UMBRĂ TEXT pentru lizibilitate maximă */
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9) !important;
         padding: 5px 0 !important;
-        border: none !important;            /* Scoate orice bordură */
-    }
-
-    /* 5. Ascunde orice submeniu care s-ar putea deschide și strica designul */
-    .ak-nav .ak-nav_list ul {
-        display: none !important;
-    }
-}
-
-/* Dacă logo-ul pare prea mare pe mobil și împinge meniul prea jos */
-@media screen and (max-width: 500px) {
-    .ak-site_branding img {
-        max-height: 40px !important;
     }
 }
