@@ -6950,3 +6950,64 @@ h3.hero-main-title-1 {
 }
 /* Aici se termina codul de mobil. Tot ce e sub linia asta e pentru Desktop. */
 
+/* ============================================================
+   MODIFICARE FORCE: MENIU TEXT ÎN LOC DE HAMBURGER PE MOBIL
+   Adaugă acest cod la FINALUL fișierului tău CSS
+   ============================================================ */
+
+@media screen and (max-width: 1199px) {
+    /* 1. Ștergem butonul hamburger */
+    .ak-munu_toggle, .ak-hamburger_wrap {
+        display: none !important;
+    }
+
+    /* 2. Forțăm meniul să fie vizibil și orizontal */
+    .ak-nav .ak-nav_list {
+        display: flex !important;           /* Îl facem vizibil */
+        position: relative !important;       /* Îl scoatem de peste conținut */
+        width: 100% !important;
+        left: 0 !important;
+        flex-direction: row !important;      /* Aliniere butoane orizontal */
+        overflow-x: auto !important;         /* Permitem glisare stânga-dreapta */
+        white-space: nowrap !important;      /* Împiedicăm textul să sară sub */
+        background-color: rgba(0,0,0,0.7) !important; /* Fundal negru translucid */
+        padding: 15px !important;
+        top: 0 !important;
+        max-height: none !important;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* 3. Stil pentru butoanele de meniu individuale */
+    .ak-nav .ak-nav_list li {
+        display: inline-block !important;
+        margin-right: 15px !important;
+        padding: 0 !important;
+    }
+
+    .ak-nav .ak-nav_list a {
+        font-size: 13px !important;          /* Text puțin mai mic să încapă mai multe */
+        padding: 5px 10px !important;
+        color: #fff !important;
+        display: block !important;
+    }
+
+    /* 4. Ajustăm logo-ul să nu se suprapună */
+    .ak-main_header_in {
+        display: flex !important;
+        flex-direction: column !important;   /* Logo sus, meniu sub el */
+        height: auto !important;
+    }
+
+    .ak-site_header.ak-style1 .ak-main_header_center .ak-site_branding {
+        position: relative !important;
+        transform: none !important;
+        left: 0 !important;
+        text-align: center !important;
+        margin: 10px 0 !important;
+    }
+}
+
+/* Ascundem bara de scroll urâtă pe Android/iPhone */
+.ak-nav .ak-nav_list::-webkit-scrollbar {
+    display: none;
+}
