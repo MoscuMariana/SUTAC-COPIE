@@ -6951,61 +6951,73 @@ h3.hero-main-title-1 {
 /* Aici se termina codul de mobil. Tot ce e sub linia asta e pentru Desktop. */
 
 /* ============================================================
-   DESIGN CURAT (STIL DESKTOP) PE MOBIL + UMBRĂ DISCRETĂ
+   DESIGN DESKTOP PE MOBIL - POZIȚIONAT MAI SUS
    ============================================================ */
 
 @media screen and (max-width: 1199px) {
-    /* 1. Eliminăm Hamburgerul și semnele de plus */
+    /* 1. Eliminăm elementele inutile */
     .ak-munu_toggle, 
     .ak-hamburger_wrap, 
     .ak-munu_dropdown_toggle {
         display: none !important;
     }
 
-    /* 2. Centrarea Header-ului (Logo sus, Meniu jos) */
+    /* 2. Ridicăm tot Header-ul mai sus */
+    .ak-site_header.ak-style1 {
+        top: 0 !important; /* Îl lipește de marginea de sus */
+    }
+
     .ak-site_header.ak-style1 .ak-main_header_in {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
         height: auto !important;
-        background: transparent !important; /* Fără bandă neagră */
-        padding: 10px 0 !important;
+        background: transparent !important;
+        padding-top: 5px !important;    /* Spațiu minim sus */
+        padding-bottom: 0 !important;
+        margin-top: 0 !important;       /* Elimină marginea exterioară */
     }
 
+    /* 3. Logo mai compact și mai sus */
     .ak-site_header.ak-style1 .ak-main_header_center .ak-site_branding {
         position: relative !important;
         transform: none !important;
         left: 0 !important;
-        margin-bottom: 5px !important;
+        margin-bottom: 2px !important;  /* Spațiu foarte mic sub logo */
+        display: block !important;
     }
 
-    /* 3. Meniu orizontal curat, centrat */
+    .ak-site_branding img {
+        max-height: 35px !important;    /* Micșorăm puțin logo-ul să câștigăm spațiu */
+    }
+
+    /* 4. Meniu orizontal ridicat */
     .ak-nav .ak-nav_list {
         display: block !important;
         position: relative !important;
         width: 100% !important;
         text-align: center !important;
-        background: transparent !important;
+        padding: 0 !important;          /* Elimină padding-ul care îl cobora */
+        margin: 0 !important;
         visibility: visible !important;
         opacity: 1 !important;
     }
 
     .ak-nav .ak-nav_list li {
         display: inline-block !important;
-        margin: 2px 7px !important; /* Spațiu fin între link-uri */
+        margin: 0 6px !important;       /* Distanță laterală minimă */
     }
 
     .ak-nav .ak-nav_list li a {
         font-size: 13px !important;
         color: #ffffff !important;
         text-transform: uppercase !important;
-        /* UMBRĂ TEXT UȘOARĂ pentru lizibilitate pe poze */
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6) !important;
-        padding: 5px 0 !important;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7) !important;
+        padding: 2px 0 !important;      /* Padding vertical micșorat la 2px */
         border: none !important;
     }
 
-    /* 4. Blocăm deschiderea submeniurilor pe mobil să nu sară designul */
+    /* 5. Dezactivăm submeniurile */
     .ak-nav .ak-nav_list ul {
         display: none !important;
     }
