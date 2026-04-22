@@ -6951,63 +6951,57 @@ h3.hero-main-title-1 {
 /* Aici se termina codul de mobil. Tot ce e sub linia asta e pentru Desktop. */
 
 /* ============================================================
-   MODIFICARE FORCE: MENIU TEXT ÎN LOC DE HAMBURGER PE MOBIL
-   Adaugă acest cod la FINALUL fișierului tău CSS
+   FORCE DESKTOP STYLE MENU ON MOBILE
+   Adaugă acest cod la FINALUL fișierului tău original
    ============================================================ */
 
 @media screen and (max-width: 1199px) {
-    /* 1. Ștergem butonul hamburger */
+    /* 1. Ascunde hamburgerul */
     .ak-munu_toggle, .ak-hamburger_wrap {
         display: none !important;
     }
 
-    /* 2. Forțăm meniul să fie vizibil și orizontal */
+    /* 2. Forțează lista să fie vizibilă ca pe PC */
     .ak-nav .ak-nav_list {
-        display: flex !important;           /* Îl facem vizibil */
-        position: relative !important;       /* Îl scoatem de peste conținut */
+        display: block !important;          /* Se comportă ca o listă normală */
+        position: relative !important;      /* Nu mai plutește peste site */
         width: 100% !important;
         left: 0 !important;
-        flex-direction: row !important;      /* Aliniere butoane orizontal */
-        overflow-x: auto !important;         /* Permitem glisare stânga-dreapta */
-        white-space: nowrap !important;      /* Împiedicăm textul să sară sub */
-        background-color: rgba(0,0,0,0.7) !important; /* Fundal negru translucid */
-        padding: 15px !important;
-        top: 0 !important;
+        background-color: transparent !important;
+        padding: 10px 0 !important;
+        text-align: center !important;      /* Centrează butoanele */
+        opacity: 1 !important;
+        visibility: visible !important;
         max-height: none !important;
-        -webkit-overflow-scrolling: touch;
     }
 
-    /* 3. Stil pentru butoanele de meniu individuale */
+    /* 3. Pune butoanele unul lângă altul, exact ca pe Desktop */
     .ak-nav .ak-nav_list li {
-        display: inline-block !important;
-        margin-right: 15px !important;
-        padding: 0 !important;
+        display: inline-block !important;   /* Stau unul lângă altul */
+        margin: 5px 10px !important;        /* Spațiu între ele */
     }
 
     .ak-nav .ak-nav_list a {
-        font-size: 13px !important;          /* Text puțin mai mic să încapă mai multe */
-        padding: 5px 10px !important;
-        color: #fff !important;
-        display: block !important;
+        font-size: 14px !important;         /* Dimensiune text */
+        color: #fff !important;             /* Culoare albă ca pe desktop */
+        text-transform: uppercase !important;
+        padding: 5px 0 !important;
+        border-bottom: none !important;
     }
 
-    /* 4. Ajustăm logo-ul să nu se suprapună */
-    .ak-main_header_in {
-        display: flex !important;
-        flex-direction: column !important;   /* Logo sus, meniu sub el */
+    /* 4. Ajustare header să poată cuprinde meniul extins */
+    .ak-site_header.ak-style1 .ak-main_header_in {
+        display: block !important;          /* Stack vertical: Logo sus, Meniu jos */
         height: auto !important;
+        text-align: center !important;
     }
 
+    /* 5. Centrează logo-ul */
     .ak-site_header.ak-style1 .ak-main_header_center .ak-site_branding {
         position: relative !important;
+        display: inline-block !important;
         transform: none !important;
         left: 0 !important;
-        text-align: center !important;
-        margin: 10px 0 !important;
+        margin-bottom: 10px !important;
     }
-}
-
-/* Ascundem bara de scroll urâtă pe Android/iPhone */
-.ak-nav .ak-nav_list::-webkit-scrollbar {
-    display: none;
 }
