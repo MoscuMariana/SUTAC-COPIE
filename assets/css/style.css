@@ -6951,11 +6951,11 @@ h3.hero-main-title-1 {
 /* Aici se termina codul de mobil. Tot ce e sub linia asta e pentru Desktop. */
 
 /* /* ============================================================
-   DESIGN ORIZONTAL: LOGO STÂNGA + MENIU ÎN CONTINUARE
+   DESIGN CENTRAT: LOGO SUS + MENIU JOS (SUB LOGO)
    ============================================================ */
 
 @media screen and (max-width: 1199px) {
-    /* 1. Eliminăm elementele inutile care ocupă spațiu */
+    /* 1. Eliminăm elementele care nu ne trebuie */
     .ak-munu_toggle, 
     .ak-hamburger_wrap, 
     .ak-munu_dropdown_toggle,
@@ -6963,65 +6963,67 @@ h3.hero-main-title-1 {
         display: none !important;
     }
 
-    /* 2. Aliniere ORIZONTALĂ pentru containerul principal */
+    /* 2. Containerul principal devine COLOANĂ pentru a pune meniul SUB logo */
     .ak-site_header.ak-style1 .ak-main_header_in {
         display: flex !important;
-        flex-direction: row !important; /* Pune elementele pe același rând */
-        justify-content: flex-start !important; /* Le lipește de stânga */
-        align-items: center !important; /* Le centrează pe verticală */
+        flex-direction: column !important; /* Pune elementele unul sub altul */
+        justify-content: center !important;
+        align-items: center !important; /* Centrează totul pe orizontală */
         height: auto !important;
         background: transparent !important;
-        padding: 10px 15px !important;
+        padding: 15px 0 !important;
     }
 
-    /* 3. Logo în stânga */
+    /* 3. Logo-ul sus pe mijloc */
     .ak-site_header.ak-style1 .ak-main_header_center .ak-site_branding {
         position: relative !important;
         transform: none !important;
         left: 0 !important;
-        margin: 0 !important;
-        padding-right: 15px !important; /* Spațiu între logo și butoane */
-        flex-shrink: 0; /* Împiedică logo-ul să se turtească */
+        margin: 0 0 10px 0 !important; /* Spațiu mic (10px) între logo și meniu */
+        display: block !important;
+        text-align: center !important;
     }
 
     .ak-site_branding img {
-        max-height: 40px !important; /* Ajustează dimensiunea logo-ului pe mobil */
+        max-height: 45px !important; /* Ajustează mărimea după plac */
         width: auto !important;
     }
 
-    /* 4. Meniul (butoanele) în continuarea logo-ului */
+    /* 4. Meniul imediat sub logo */
     .ak-nav {
         display: flex !important;
-        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
     }
 
     .ak-nav .ak-nav_list {
-        display: flex !important; /* Schimbă din listă verticală în rând orizontal */
-        flex-direction: row !important;
+        display: flex !important;
+        flex-direction: row !important; /* Butoanele stau unul lângă altul pe rând */
+        flex-wrap: wrap !important;     /* Dacă nu încap pe un rând, sar pe al doilea */
+        justify-content: center !important;
         position: static !important;
-        width: auto !important;
+        width: 100% !important;
         background: transparent !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        margin: 0 !important;
         padding: 0 !important;
+        margin: 0 !important;
+        list-style: none !important;
     }
 
     .ak-nav .ak-nav_list li {
         display: inline-block !important;
-        margin: 0 8px !important; /* Spațiu fin între butoane */
+        margin: 5px 10px !important; /* Spațiu între butoane */
     }
 
     .ak-nav .ak-nav_list li a {
-        font-size: 12px !important; /* Micșorăm puțin scrisul ca să încapă pe ecran */
+        font-size: 13px !important;
         color: #ffffff !important;
         text-transform: uppercase !important;
-        white-space: nowrap !important; /* Împiedică textul să sară pe rândul doi */
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8) !important;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9) !important;
+        white-space: nowrap !important;
         padding: 5px 0 !important;
     }
 
-    /* 5. Ascundem submeniurile ca să nu se deschidă peste tot ecranul la atingere */
+    /* 5. Dezactivăm submeniurile */
     .ak-nav .ak-nav_list ul {
         display: none !important;
     }
